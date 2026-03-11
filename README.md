@@ -1,14 +1,14 @@
 # NGS Variant Calling Workflow
 
-This repository presents a bioinformatics workflow for detecting genetic variants from next-generation sequencing (NGS) data using commonly used genomic analysis tools available in the Galaxy platform.
+This repository presents a bioinformatics workflow for detecting genetic variants from next-generation sequencing (NGS) data using widely used genomic analysis tools available through the Galaxy platform.
 
 ---
 
 ## Project Overview
 
-The aim of this project is to process raw sequencing reads, evaluate their quality, align them to the human reference genome (hg19), and identify genetic variants present in the sample.
+The aim of this project is to process raw sequencing reads, evaluate their quality, align them to the human reference genome (hg19), and identify genetic variants present in the analyzed sample.
 
-The workflow follows a typical variant detection pipeline used in genomic research.
+The workflow represents a typical **NGS variant detection pipeline** used in genomic research and bioinformatics analysis.
 
 ---
 
@@ -31,14 +31,14 @@ High average **Phred quality scores (>30)** indicate reliable sequencing data su
 
 Reads were aligned to the human reference genome **hg19** using **BWA-MEM**.
 
-The alignment generated a **BAM file**, which was then processed and sorted for downstream analysis.
+The alignment generated a **BAM file**, which was then sorted and processed for downstream analysis.
 
 Alignment statistics were obtained using **SAMtools**, showing:
 
 - ~99% successfully mapped reads
 - High proportion of properly paired reads
 
-These metrics indicate a high-quality alignment.
+These metrics indicate high-quality alignment of sequencing reads.
 
 ---
 
@@ -52,7 +52,7 @@ The analysis detected approximately **29,000 genomic variants**, including:
 - Insertions
 - Deletions
 
-Variant information includes:
+Each variant includes information about:
 
 - Chromosome location
 - Genomic position
@@ -64,17 +64,17 @@ Variant information includes:
 
 ### 4. Variant Annotation
 
-Detected variants were functionally annotated using **SnpEff**, which provides information about the potential biological impact of each variant.
+Detected variants were functionally annotated using **SnpEff**, which predicts the biological impact of genetic variants.
 
 Annotated effects include:
 
 - Missense mutations
 - Nonsense mutations
 - Silent mutations
-- Variants in regulatory regions (UTRs)
+- Variants located in regulatory regions (UTRs)
 - Intronic variants
 
-The transition/transversion ratio observed is consistent with expected biological ranges.
+The observed transition/transversion ratio is consistent with expected biological ranges.
 
 ---
 
@@ -92,15 +92,15 @@ These tools allow inspection of sequencing coverage, alignment quality, and geno
 
 ## Tools and Technologies
 
-- Galaxy Platform
-- FASTQC
-- BWA-MEM
-- SAMtools
-- FreeBayes
-- SnpEff
-- IGV
-- UCSC Genome Browser
-- R / RStudio
+- Galaxy Platform  
+- FASTQC  
+- BWA-MEM  
+- SAMtools  
+- FreeBayes  
+- SnpEff  
+- IGV  
+- UCSC Genome Browser  
+- R / RStudio  
 
 ---
 
@@ -116,7 +116,9 @@ images/     Figures and workflow screenshots
 
 ---
 
-## Quality Control Results
+# Results
+
+## Quality Control
 
 Sequencing read quality was evaluated using FASTQC.  
 The distribution of per-sequence quality scores shows that most reads have **Phred scores above 30**, indicating high sequencing accuracy and reliable data for downstream analysis.
@@ -125,9 +127,7 @@ The distribution of per-sequence quality scores shows that most reads have **Phr
 
 ---
 
-## Workflow Visualization
-
-### GC Content Distribution
+## GC Content Distribution
 
 The GC content distribution follows the expected pattern for human genomic data, suggesting no significant contamination or sequencing bias.
 
@@ -135,26 +135,35 @@ The GC content distribution follows the expected pattern for human genomic data,
 
 ---
 
-### Alignment Visualization
+## Alignment Visualization
 
-Aligned reads can be visually inspected using genome browsers such as IGV or the UCSC Genome Browser.  
-These tools allow detailed inspection of sequencing coverage and variant positions across genomic regions.
+Aligned sequencing reads were visually inspected using IGV to validate mapping quality and confirm coverage across genomic regions.
 
 ![IGV Alignment](images/igv_alignment.png)
 
 ---
 
-### Alignment Statistics
+## Variant Annotation Summary
 
-Alignment statistics indicate high mapping efficiency and proper pairing of reads, supporting the reliability of the sequencing data and alignment process.
+Variant annotation using **SnpEff** revealed multiple variant types across different genomic regions.  
+The summary below shows the distribution of variant effects and their genomic locations.
 
-![Alignment Statistics](images/alignment_stats.png)
+![Variant Annotation Summary](images/snpeff_variant_summary.png)
+
+---
+
+## Codon Change Matrix
+
+The codon change matrix generated by **SnpEff** summarizes substitutions between codons observed in the dataset.  
+Rows represent the reference codon and columns represent the mutated codon, indicating the frequency of each substitution.
+
+![Codon Changes Matrix](images/codon_changes_matrix.png)
 
 ---
 
 ## Purpose
 
-This repository demonstrates a typical **NGS variant calling workflow** used in genomic data analysis and illustrates the main steps required to process, analyze, and interpret sequencing data.
+This repository demonstrates a typical **NGS variant calling workflow**, illustrating the main steps required to process, analyze, and interpret genomic sequencing data.
 
 ---
 
