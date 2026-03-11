@@ -131,7 +131,7 @@ The distribution of per-sequence quality scores shows that most reads have **Phr
 
 The GC content distribution follows the expected pattern for human genomic data, suggesting no significant contamination or sequencing bias.
 
-![GC Content](images/fastqc_gc_content.png)
+![GC Content](images/gc_content_distribution.png)
 
 ---
 
