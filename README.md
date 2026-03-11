@@ -2,6 +2,8 @@
 
 This repository presents a bioinformatics workflow for detecting genetic variants from next-generation sequencing (NGS) data using commonly used genomic analysis tools available in the Galaxy platform.
 
+---
+
 ## Project Overview
 
 The aim of this project is to process raw sequencing reads, evaluate their quality, align them to the human reference genome (hg19), and identify genetic variants present in the sample.
@@ -105,11 +107,48 @@ These tools allow inspection of sequencing coverage, alignment quality, and geno
 ## Repository Structure
 
 ```
-data/       Raw sequencing reads
-scripts/    Scripts used for preprocessing
-results/    Variant calling and annotation outputs
-report/     Analysis report
+data/       Raw sequencing reads  
+scripts/    Scripts used for preprocessing  
+results/    Variant calling and annotation outputs  
+report/     Analysis report  
+images/     Figures and workflow screenshots
 ```
+
+---
+
+## Quality Control Results
+
+Sequencing read quality was evaluated using FASTQC.  
+The distribution of per-sequence quality scores shows that most reads have **Phred scores above 30**, indicating high sequencing accuracy and reliable data for downstream analysis.
+
+![FASTQC Quality Scores](images/fastqc_quality_scores.png)
+
+---
+
+## Workflow Visualization
+
+### GC Content Distribution
+
+The GC content distribution follows the expected pattern for human genomic data, suggesting no significant contamination or sequencing bias.
+
+![GC Content](images/fastqc_gc_content.png)
+
+---
+
+### Alignment Visualization
+
+Aligned reads can be visually inspected using genome browsers such as IGV or the UCSC Genome Browser.  
+These tools allow detailed inspection of sequencing coverage and variant positions across genomic regions.
+
+![IGV Alignment](images/igv_alignment.png)
+
+---
+
+### Alignment Statistics
+
+Alignment statistics indicate high mapping efficiency and proper pairing of reads, supporting the reliability of the sequencing data and alignment process.
+
+![Alignment Statistics](images/alignment_stats.png)
 
 ---
 
